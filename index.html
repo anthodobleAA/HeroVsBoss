@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>heroVsBoss - Presentación Oficial</title>
+    <link rel="icon" type="image/png" href="assets/img/titulo.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="loading">
+
+    <div id="preloader">
+        <div class="loader-title">Forjando Almas...</div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="progress-text" id="progressText">Cargando Assets (0%)</div>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="assets/img/titulo.png" alt="heroVsBoss Logo">
+        </div>
+        <nav>
+            <a onclick="toggleContactCard()">Contacto / Skills</a>
+        </nav>
+    </header>
+
+    <div class="hero-banner" id="heroBanner">
+        <img src="assets/img/titulo.png" id="imgTitulo" alt="heroVsBoss Titulo" onerror="this.style.display='none'; document.getElementById('placeholder-text').style.display='block';">
+        <h1 id="placeholder-text" style="display:none; font-family:var(--font-title); font-size:3rem; text-shadow: 0 0 20px var(--accent-glow);">heroVsBoss</h1>
+    </div>
+
+    <div class="main-interface" id="mainInterface">
+        <div class="sidebar">
+            <h3>Roster</h3>
+            
+            <div class="char-selector active" onclick="selectCharacter('iceboss')">
+                <div class="char-avatar" id="avatar-iceboss">?</div>
+                <div class="char-info-preview">
+                    <span class="name">Kyros (Raíz de hielo)</span>
+                    <span class="role">Boss / Hielo</span>
+                </div>
+            </div>
+
+            <div class="char-selector" onclick="selectCharacter('flowergirl')">
+                <div class="char-avatar" id="avatar-flowergirl">?</div>
+                <div class="char-info-preview">
+                    <span class="name">Fiora</span>
+                    <span class="role">Hero / Naturaleza</span>
+                </div>
+            </div>
+
+            <div class="char-selector" onclick="selectCharacter('icegirl')">
+                <div class="char-avatar" id="avatar-icegirl">?</div>
+                <div class="char-info-preview">
+                    <span class="name">Maeve</span>
+                    <span class="role">Hero / Hielo</span>
+                </div>
+            </div>
+
+            <div class="char-selector" onclick="selectCharacter('snakeboy')">
+                <div class="char-avatar" id="avatar-snakeboy">?</div>
+                <div class="char-info-preview">
+                    <span class="name">Viper </span>
+                    <span class="role">Hero / Veneno</span>
+                </div>
+            </div>
+
+            <div class="char-selector" onclick="selectCharacter('desconocido1')">
+                <div class="char-avatar">?</div>
+                <div class="char-info-preview">
+                    <span class="name">Héroe Oculto I</span>
+                    <span class="role">Próximamente</span>
+                </div>
+            </div>
+            
+            <div class="char-selector" onclick="selectCharacter('desconocido2')">
+                <div class="char-avatar">?</div>
+                <div class="char-info-preview">
+                    <span class="name">Héroe Oculto II</span>
+                    <span class="role">Próximamente</span>
+                </div>
+            </div>
+
+            <div class="char-selector" onclick="selectCharacter('desconocido3')">
+                <div class="char-avatar">?</div>
+                <div class="char-info-preview">
+                    <span class="name">Héroe Oculto III</span>
+                    <span class="role">Próximamente</span>
+                </div>
+            </div>
+
+            <div class="char-selector" onclick="selectCharacter('desconocido4')">
+                <div class="char-avatar">?</div>
+                <div class="char-info-preview">
+                    <span class="name">Héroe Oculto IV</span>
+                    <span class="role">Próximamente</span>
+                </div>
+            </div>
+
+            <div class="char-selector" onclick="selectCharacter('desconocido5')">
+                <div class="char-avatar">?</div>
+                <div class="char-info-preview">
+                    <span class="name">Héroe Oculto V</span>
+                    <span class="role">Próximamente</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="display-container">
+            <div class="char-showcase" id="charShowcase">
+                <div class="char-large-view">
+                    <canvas id="spriteDisplay" width="400" height="500"></canvas>
+                    <div class="placeholder-question" id="placeholderImg">?</div>
+                </div>
+                
+                <div class="char-details">
+                    <h2 id="charName">Kyros</h2>
+                    <span class="title-tag" id="charTitle">Guardián de los Páramos Helados</span>
+                    <p id="charDesc">Es una aberración de cuatro brazos tallada en la roca viva del Colmillo, el pico más inclemente y helado del mundo conocido. Su trágica condena comenzó cuando, cegado por el fanatismo, obligó a todos sus devotos seguidores a emprender una peregrinación mortal hacia la cumbre en busca de una falsa salvación. Todos perecieron en la nieve. Como castigo por su herejía y la sangre derramada en el hielo, la antigua y oscura entidad conocida como la Raíz del Hielo lo reclamó. Su humanidad fue despojada y su cuerpo, deformado y corrompido, se convirtió en el recipiente viviente de esta magia glacial. Ahora es un coloso implacable de fuerza monstruosa; se dice que su sola presencia emite un frío tan sepulcral que es capaz de congelar la sangre en las venas de los guerreros más valientes antes de que siquiera puedan desenvainar sus espadas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-card" id="contactCard">
+        <h4><span>Perfil del Desarrollador</span><span class="close-card" onclick="toggleContactCard()">✕</span></h4>
+        <div class="skills-container">
+            <ul class="skills-list">
+                <li><span>♦</span> Animación y creación de objetos 3D (Blender)</li>
+                <li><span>♦</span> Desarrollo Frontend (JS, CSS3, HTML5)</li>
+                <li><span>♦</span> Programación de Videojuegos (C# / Unity)</li>
+            </ul>
+        </div>
+        <a id="emailLink" href="#mailto:anthony.cpweb@gmail.com" class="email-btn">Contactar para Proyectos</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 heroVsBoss | Contacto: <a href="mailto:anthony.cpweb@gmail.com">anthony.cpweb@gmail.com</a></p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
