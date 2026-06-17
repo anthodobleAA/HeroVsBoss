@@ -244,7 +244,7 @@ function toggleContactCard() {
     document.getElementById('contactCard').classList.toggle('active');
 }
 
-const tuCorreo = "tu-email@ejemplo.com"; 
+const tuCorreo = "anthony.cpweb@gmail.com"; 
 const asunto = "Contacto - heroVsBoss";
 const cuerpo = "hola, he revisado tu portafolio de heroVsBoss"; 
 document.getElementById('emailLink').href = `mailto:${tuCorreo}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
